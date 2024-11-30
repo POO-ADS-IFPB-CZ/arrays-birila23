@@ -18,7 +18,9 @@ public class Venda {
     public double getTotal(){
         double total = 0;
         for(int i=0;i<quantidadeItens; i++){
-            total += itens[i].getSubtotal();
+            if(itens[i] != null){
+                total += itens[i].getSubtotal();
+            }
         }
         return total;
     }
@@ -35,4 +37,17 @@ public class Venda {
         return Arrays.copyOf(itens, quantidadeItens);
     }
 
+    public void removerProduto(int cod){
+
+        for(int i=0; i<quantidadeItens; i++){
+            if(itens[i] == null && itens[i].getCodigo() == cod){
+                itens[i] = itens[i + 1];
+                System.out.println("Item removido com sucesso!");
+            }
+            itens[--quantidadeItens] = null;
+
+
+        }
+
+    }
 }

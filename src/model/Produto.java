@@ -27,6 +27,14 @@ public class Produto {
         return descricao;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
